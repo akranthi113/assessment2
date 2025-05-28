@@ -1,6 +1,7 @@
-const http = require('http');
-const server = http.createServer((req, res) => {
-  res.end('Hello from CI/CD Pipeline!');
-});
-server.listen(8080);
+const express = require('express');
+const app = express();
+const port = 3000;
+
+app.get('/', (req, res) => res.send('Hello from ECS!'));
+app.listen(port, () => console.log(`App running on port ${port}`));
 
